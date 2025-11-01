@@ -1,0 +1,231 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import morghulisMain from "@assets/morghulisMain.webp";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title="Morghulis Installation Guide">
+  <Header />
+  <main class="flex-1 px-4 py-10 md:px-10 lg:px-20">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:grid-rows-3">
+        <div
+          class="col-span-1 lg:col-span-3 rounded-xl bg-card-light dark:bg-card-dark p-6 md:p-8 flex flex-col justify-center"
+        >
+          <h1 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">
+            Installation Guide
+          </h1>
+          <p
+            class="text-base md:text-lg text-subtext-light dark:text-subtext-dark max-w-3xl"
+          >
+            Your step-by-step guide to setting up Morghulis, our GTK-based
+            graphical desktop shell for Linux. Follow the instructions for your
+            distribution to get started.
+          </p>
+        </div>
+
+        <div
+          class="col-span-1 lg:col-span-1 rounded-xl bg-card-light dark:bg-card-dark p-6"
+        >
+          <h2 class="text-xl font-bold mb-4">Prerequisites</h2>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span
+                class="iconify lucide--layers text-primary-light dark:text-primary-dark mt-1 text-xl"
+              ></span>
+              <div>
+                <h3 class="font-bold">GTK >= 4.18</h3>
+                <p class="text-sm text-subtext-light dark:text-subtext-dark">
+                  Ensure you have the latest GTK libraries installed.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span
+                class="iconify lucide--git-branch text-primary-light dark:text-primary-dark mt-1 text-xl"
+              ></span>
+              <div>
+                <h3 class="font-bold">Systemd</h3>
+                <p class="text-sm text-subtext-light dark:text-subtext-dark">
+                  A systemd-based Linux distribution is required.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span
+                class="iconify lucide--hard-drive text-primary-light dark:text-primary-dark mt-1 text-xl"
+              ></span>
+              <div>
+                <h3 class="font-bold">Disk Space</h3>
+                <p class="text-sm text-subtext-light dark:text-subtext-dark">
+                  At least 2GB of free disk space is recommended.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-span-1 lg:col-span-2 lg:row-span-2 rounded-xl bg-card-light dark:bg-card-dark p-6"
+        >
+          <h2 class="text-xl font-bold mb-4">Installation Steps</h2>
+
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-lg font-bold mb-4">Arch Linux</h3>
+              <ol
+                class="list-decimal list-inside space-y-4 text-subtext-light dark:text-subtext-dark"
+              >
+                <li>
+                  <span class="text-text-light dark:text-text-dark font-medium"
+                    >Install from AUR:</span
+                  >
+                  <div
+                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+                  >
+                    <code>yay -S morghulis-git</code>
+                  </div>
+                </li>
+                <li>
+                  <span class="text-text-light dark:text-text-dark font-medium"
+                    >Just launch it:</span
+                  >
+                  <div
+                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+                  >
+                    <code> morghulis --help </code>
+                  </div>
+                </li>
+              </ol>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold mb-4">Build from source</h3>
+              <ol
+                class="list-decimal list-inside space-y-4 text-subtext-light dark:text-subtext-dark"
+              >
+                <li>
+                  <span>Clone the repository:</span>
+
+                  <div
+                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+                  >
+                    <code>
+                      git clone https://github.com/ARKye03/morghulis.git
+                    </code>
+                  </div>
+                </li>
+                <li></li>
+                <span>Build the project:</span>
+
+                <div
+                  class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+                >
+                  <code> cd morghulis; meson setup build; ninja -C build </code>
+                </div>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="col-span-1 lg:col-span-1 rounded-xl bg-card-light dark:bg-card-dark overflow-hidden"
+      >
+        <Image
+          alt="A screenshot of the Morghulis desktop environment"
+          src={morghulisMain}
+        />
+      </div>
+
+      <div
+        class="col-span-1 lg:col-span-1 rounded-xl bg-card-light dark:bg-card-dark p-6"
+      >
+        <h2 class="text-xl font-bold mb-4">Post-Installation</h2>
+        <ul
+          class="list-disc list-inside space-y-2 text-subtext-light dark:text-subtext-dark"
+        >
+          <li class="text-text-light dark:text-text-dark">
+            Log in to your new session.
+          </li>
+          <li class="text-text-light dark:text-text-dark">
+            Run the first-time setup wizard.
+          </li>
+          <li class="text-text-light dark:text-text-dark">
+            Explore settings to customize your experience.
+          </li>
+          <li class="text-text-light dark:text-text-dark">
+            Check our docs for advanced configuration.
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="col-span-1 lg:col-span-2 rounded-xl bg-card-light dark:bg-card-dark p-6"
+      >
+        <h2 class="text-xl font-bold mb-4">Frequently Asked Questions</h2>
+        <div class="space-y-3">
+          <details class="group">
+            <summary
+              class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
+            >
+              <span
+                >Installation fails with a dependency error. What do I do?</span
+              >
+              <span
+                class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
+              ></span>
+            </summary>
+            <div
+              class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
+            >
+              Ensure all prerequisites are met. Run <code
+                class="bg-background-light dark:bg-background-dark px-2 py-0.5 rounded"
+                >sudo apt -f install</code
+              > to attempt to fix broken dependencies. If the issue persists, please
+              open an issue on our GitHub repository with your distribution details
+              and the error message.
+            </div>
+          </details>
+
+          <details class="group">
+            <summary
+              class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
+            >
+              <span>How can I switch back to my old desktop environment?</span>
+              <span
+                class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
+              ></span>
+            </summary>
+            <div
+              class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
+            >
+              You can switch back at any time from your display manager's
+              session selector. Simply log out and choose your previous desktop
+              environment from the session menu before logging back in.
+            </div>
+          </details>
+
+          <details class="group">
+            <summary
+              class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
+            >
+              <span>Does Morghulis work with NVIDIA proprietary drivers?</span>
+              <span
+                class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
+              ></span>
+            </summary>
+            <div
+              class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
+            >
+              Yes, Morghulis is compatible with NVIDIA proprietary drivers. Make
+              sure you're running the latest driver version for the best
+              experience. Some Wayland-specific features may require driver
+              version 495 or newer.
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
