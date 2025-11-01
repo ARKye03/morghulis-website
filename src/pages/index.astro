@@ -1,16 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Features from "@components/Features.astro";
-import Hero from "@components/Hero.astro";
-import Gallery from "@components/Gallery.astro";
-import Footer from "@components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import BentoGrid from "../components/BentoGrid.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
-  <main>
-    <Hero />
-    <Features />
-    <Gallery />
+<BaseLayout title="AstroShell - A Beautifully Crafted Desktop Experience">
+  <Header />
+  <main class="flex-1">
+    <div class="container mx-auto max-w-5xl px-4 py-16 sm:py-24">
+      <Hero />
+      <BentoGrid />
+    </div>
   </main>
   <Footer />
-</Layout>
+</BaseLayout>

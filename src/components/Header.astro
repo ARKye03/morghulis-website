@@ -1,0 +1,66 @@
+---
+
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-b border-black/10 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
+>
+  <div
+    class="container mx-auto flex h-16 max-w-5xl items-center justify-between px-4"
+  >
+    <div class="flex items-center gap-4">
+      <span
+        class="material-symbols-outlined text-primary-light dark:text-primary-dark text-2xl"
+      >
+        rocket_launch
+      </span>
+      <h2
+        class="text-lg font-bold tracking-[-0.015em] text-gray-800 dark:text-white"
+      >
+        AstroShell
+      </h2>
+    </div>
+    <nav class="hidden items-center gap-9 md:flex">
+      <a
+        class="text-sm font-medium hover:text-primary-light dark:hover:text-primary-dark transition-colors"
+        href="#"
+      >
+        Features
+      </a>
+      <a
+        class="text-sm font-medium hover:text-primary-light dark:hover:text-primary-dark transition-colors"
+        href="#"
+      >
+        Docs
+      </a>
+      <a
+        class="text-sm font-medium hover:text-primary-light dark:hover:text-primary-dark transition-colors"
+        href="#"
+      >
+        Download
+      </a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <button
+        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary-light dark:bg-primary-dark text-gray-800 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] transition-opacity hover:opacity-90"
+      >
+        <span class="truncate">Get Started</span>
+      </button>
+      <button
+        class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-black/5 dark:bg-white/10 transition-colors hover:bg-black/10 dark:hover:bg-white/20"
+        id="theme-toggle"
+      >
+        <span class="material-symbols-outlined text-xl">light_mode</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggle = document.getElementById("theme-toggle");
+  const html = document.documentElement;
+
+  themeToggle?.addEventListener("click", () => {
+    html.classList.toggle("dark");
+  });
+</script>
