@@ -89,74 +89,55 @@ import { Image } from "astro:assets";
                 </li>
                 <li>
                   <span class="text-text-light dark:text-text-dark font-medium"
-                    >Log out and select "Morghulis" from your display manager.</span
+                    >Just launch it:</span
                   >
+                  <div
+                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+                  >
+                    <code>morghulis --help</code>
+                  </div>
                 </li>
               </ol>
             </div>
 
             <div>
-              <h3 class="text-lg font-bold mb-4">Debian / Ubuntu</h3>
+              <h3 class="text-lg font-bold mb-4">Build from source</h3>
               <ol
                 class="list-decimal list-inside space-y-4 text-subtext-light dark:text-subtext-dark"
               >
                 <li>
                   <span class="text-text-light dark:text-text-dark font-medium"
-                    >Add the official PPA repository:</span
+                    >Clone the repository:</span
                   >
                   <div
                     class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
                   >
-                    <code>sudo add-apt-repository ppa:Morghulis/stable</code>
+                    <code
+                      >git clone https://github.com/ARKye03/morghulis.git</code
+                    >
                   </div>
                 </li>
                 <li>
                   <span class="text-text-light dark:text-text-dark font-medium"
-                    >Update your package list and install:</span
+                    >Build the project:</span
                   >
                   <div
                     class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
                   >
-                    <code>sudo apt update && sudo apt install Morghulis</code>
+                    <code
+                      >cd morghulis && meson setup build && ninja -C build</code
+                    >
                   </div>
                 </li>
                 <li>
                   <span class="text-text-light dark:text-text-dark font-medium"
-                    >Log out and select "Morghulis" from your display manager.</span
-                  >
-                </li>
-              </ol>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-bold mb-4">Fedora</h3>
-              <ol
-                class="list-decimal list-inside space-y-4 text-subtext-light dark:text-subtext-dark"
-              >
-                <li>
-                  <span class="text-text-light dark:text-text-dark font-medium"
-                    >Add the COPR repository:</span
+                    >Run it:</span
                   >
                   <div
                     class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
                   >
-                    <code>sudo dnf copr enable Morghulis/stable</code>
+                    <code>./build/src/morghulis --help</code>
                   </div>
-                </li>
-                <li>
-                  <span class="text-text-light dark:text-text-dark font-medium"
-                    >Install Morghulis:</span
-                  >
-                  <div
-                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-                  >
-                    <code>sudo dnf install Morghulis</code>
-                  </div>
-                </li>
-                <li>
-                  <span class="text-text-light dark:text-text-dark font-medium"
-                    >Log out and select "Morghulis" from your display manager.</span
-                  >
                 </li>
               </ol>
             </div>
