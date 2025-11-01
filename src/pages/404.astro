@@ -1,1 +1,77 @@
-<h1 class="text-4xl font-bold">404 - Page Not Found</h1>
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+---
+
+<BaseLayout title="404 Not Found - AstroShell">
+  <div class="flex h-full grow flex-col">
+    <div class="flex flex-1 justify-center px-4 sm:px-8 md:px-16 lg:px-20 py-5">
+      <div class="flex w-full max-w-5xl flex-col">
+        <Header />
+
+        <main class="flex-1 py-12 sm:py-16 md:py-24">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              class="md:col-span-2 rounded-xl bg-surface-light dark:bg-surface-dark p-6 sm:p-8 flex items-center justify-center min-h-[200px] md:min-h-[300px]"
+            >
+              <h1
+                class="text-8xl sm:text-9xl md:text-[160px] lg:text-[200px] font-black leading-none tracking-tighter text-primary-light dark:text-primary-dark"
+              >
+                404
+              </h1>
+            </div>
+
+            <div
+              class="rounded-xl bg-surface-light dark:bg-surface-dark p-6 sm:p-8 flex flex-col items-center justify-center text-center gap-4"
+            >
+              <div class="size-16 text-primary-light dark:text-primary-dark">
+                <span
+                  class="icon-[dinkie-icons--dragon-face] text-primary-light dark:text-primary-dark text-5xl"
+                ></span>
+              </div>
+              <p class="font-bold text-lg">Morghulis</p>
+              <p
+                class="text-sm text-text-secondary-light dark:text-text-secondary-dark"
+              >
+                A modern graphical shell for Linux, built with GTK.
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl bg-surface-light dark:bg-surface-dark p-6 sm:p-8 flex flex-col justify-center"
+            >
+              <p
+                class="text-3xl sm:text-4xl font-black leading-tight tracking-[-0.033em]"
+              >
+                Page Not Found
+              </p>
+              <p
+                class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-normal mt-3"
+              >
+                Sorry, the page you are looking for doesn't exist or has been
+                moved.
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl bg-primary-light dark:bg-primary-dark flex flex-col items-center justify-center p-6 sm:p-8 group hover:opacity-95 transition-opacity"
+            >
+              <a
+                class="w-full h-full flex flex-col items-center justify-center text-center gap-3"
+                href="/"
+              >
+                <span
+                  class="iconify lucide--home text-5xl text-black dark:text-white"
+                ></span>
+                <span class="text-xl font-bold text-black dark:text-white"
+                  >Return to Homepage</span
+                >
+              </a>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

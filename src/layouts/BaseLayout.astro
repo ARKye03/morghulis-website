@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from "astro:transitions";
+
 interface Props {
   title: string;
 }
@@ -12,6 +14,7 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
+    <ClientRouter />
   </head>
   <body
     class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark antialiased"
