@@ -35,7 +35,7 @@ import { Image } from "astro:assets";
                 class="iconify lucide--layers text-primary-light dark:text-primary-dark mt-1 text-xl"
               ></span>
               <div>
-                <h3 class="font-bold">GTK >= 4.18</h3>
+                <h3 class="font-bold">GTK 4.x+</h3>
                 <p class="text-sm text-subtext-light dark:text-subtext-dark">
                   Ensure you have the latest GTK libraries installed.
                 </p>
@@ -89,141 +89,179 @@ import { Image } from "astro:assets";
                 </li>
                 <li>
                   <span class="text-text-light dark:text-text-dark font-medium"
-                    >Just launch it:</span
+                    >Log out and select "Morghulis" from your display manager.</span
                   >
-                  <div
-                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-                  >
-                    <code> morghulis --help </code>
-                  </div>
                 </li>
               </ol>
             </div>
+
             <div>
-              <h3 class="text-lg font-bold mb-4">Build from source</h3>
+              <h3 class="text-lg font-bold mb-4">Debian / Ubuntu</h3>
               <ol
                 class="list-decimal list-inside space-y-4 text-subtext-light dark:text-subtext-dark"
               >
                 <li>
-                  <span>Clone the repository:</span>
-
+                  <span class="text-text-light dark:text-text-dark font-medium"
+                    >Add the official PPA repository:</span
+                  >
                   <div
                     class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
                   >
-                    <code>
-                      git clone https://github.com/ARKye03/morghulis.git
-                    </code>
+                    <code>sudo add-apt-repository ppa:Morghulis/stable</code>
                   </div>
                 </li>
-                <li></li>
-                <span>Build the project:</span>
+                <li>
+                  <span class="text-text-light dark:text-text-dark font-medium"
+                    >Update your package list and install:</span
+                  >
+                  <div
+                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+                  >
+                    <code>sudo apt update && sudo apt install Morghulis</code>
+                  </div>
+                </li>
+                <li>
+                  <span class="text-text-light dark:text-text-dark font-medium"
+                    >Log out and select "Morghulis" from your display manager.</span
+                  >
+                </li>
+              </ol>
+            </div>
 
-                <div
-                  class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-                >
-                  <code> cd morghulis; meson setup build; ninja -C build </code>
-                </div>
+            <div>
+              <h3 class="text-lg font-bold mb-4">Fedora</h3>
+              <ol
+                class="list-decimal list-inside space-y-4 text-subtext-light dark:text-subtext-dark"
+              >
+                <li>
+                  <span class="text-text-light dark:text-text-dark font-medium"
+                    >Add the COPR repository:</span
+                  >
+                  <div
+                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+                  >
+                    <code>sudo dnf copr enable Morghulis/stable</code>
+                  </div>
+                </li>
+                <li>
+                  <span class="text-text-light dark:text-text-dark font-medium"
+                    >Install Morghulis:</span
+                  >
+                  <div
+                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+                  >
+                    <code>sudo dnf install Morghulis</code>
+                  </div>
+                </li>
+                <li>
+                  <span class="text-text-light dark:text-text-dark font-medium"
+                    >Log out and select "Morghulis" from your display manager.</span
+                  >
+                </li>
               </ol>
             </div>
           </div>
         </div>
-      </div>
 
-      <div
-        class="col-span-1 lg:col-span-1 rounded-xl bg-card-light dark:bg-card-dark overflow-hidden"
-      >
-        <Image
-          alt="A screenshot of the Morghulis desktop environment"
-          src={morghulisMain}
-        />
-      </div>
-
-      <div
-        class="col-span-1 lg:col-span-1 rounded-xl bg-card-light dark:bg-card-dark p-6"
-      >
-        <h2 class="text-xl font-bold mb-4">Post-Installation</h2>
-        <ul
-          class="list-disc list-inside space-y-2 text-subtext-light dark:text-subtext-dark"
+        <div
+          class="col-span-1 lg:col-span-1 rounded-xl bg-card-light dark:bg-card-dark overflow-hidden"
         >
-          <li class="text-text-light dark:text-text-dark">
-            Log in to your new session.
-          </li>
-          <li class="text-text-light dark:text-text-dark">
-            Run the first-time setup wizard.
-          </li>
-          <li class="text-text-light dark:text-text-dark">
-            Explore settings to customize your experience.
-          </li>
-          <li class="text-text-light dark:text-text-dark">
-            Check our docs for advanced configuration.
-          </li>
-        </ul>
-      </div>
+          <Image
+            alt="A screenshot of the Morghulis desktop environment"
+            src={morghulisMain}
+          />
+        </div>
 
-      <div
-        class="col-span-1 lg:col-span-2 rounded-xl bg-card-light dark:bg-card-dark p-6"
-      >
-        <h2 class="text-xl font-bold mb-4">Frequently Asked Questions</h2>
-        <div class="space-y-3">
-          <details class="group">
-            <summary
-              class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
-            >
-              <span
-                >Installation fails with a dependency error. What do I do?</span
+        <div
+          class="col-span-1 lg:col-span-1 rounded-xl bg-card-light dark:bg-card-dark p-6"
+        >
+          <h2 class="text-xl font-bold mb-4">Post-Installation</h2>
+          <ul
+            class="list-disc list-inside space-y-2 text-subtext-light dark:text-subtext-dark"
+          >
+            <li class="text-text-light dark:text-text-dark">
+              Log in to your new session.
+            </li>
+            <li class="text-text-light dark:text-text-dark">
+              Run the first-time setup wizard.
+            </li>
+            <li class="text-text-light dark:text-text-dark">
+              Explore settings to customize your experience.
+            </li>
+            <li class="text-text-light dark:text-text-dark">
+              Check our docs for advanced configuration.
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="col-span-1 lg:col-span-2 rounded-xl bg-card-light dark:bg-card-dark p-6"
+        >
+          <h2 class="text-xl font-bold mb-4">Frequently Asked Questions</h2>
+          <div class="space-y-3">
+            <details class="group">
+              <summary
+                class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
               >
-              <span
-                class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
-              ></span>
-            </summary>
-            <div
-              class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
-            >
-              Ensure all prerequisites are met. Run <code
-                class="bg-background-light dark:bg-background-dark px-2 py-0.5 rounded"
-                >sudo apt -f install</code
-              > to attempt to fix broken dependencies. If the issue persists, please
-              open an issue on our GitHub repository with your distribution details
-              and the error message.
-            </div>
-          </details>
+                <span
+                  >Installation fails with a dependency error. What do I do?</span
+                >
+                <span
+                  class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
+                ></span>
+              </summary>
+              <div
+                class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
+              >
+                Ensure all prerequisites are met. Run <code
+                  class="bg-background-light dark:bg-background-dark px-2 py-0.5 rounded"
+                  >sudo apt -f install</code
+                > to attempt to fix broken dependencies. If the issue persists, please
+                open an issue on our GitHub repository with your distribution details
+                and the error message.
+              </div>
+            </details>
 
-          <details class="group">
-            <summary
-              class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
-            >
-              <span>How can I switch back to my old desktop environment?</span>
-              <span
-                class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
-              ></span>
-            </summary>
-            <div
-              class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
-            >
-              You can switch back at any time from your display manager's
-              session selector. Simply log out and choose your previous desktop
-              environment from the session menu before logging back in.
-            </div>
-          </details>
+            <details class="group">
+              <summary
+                class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
+              >
+                <span>How can I switch back to my old desktop environment?</span
+                >
+                <span
+                  class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
+                ></span>
+              </summary>
+              <div
+                class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
+              >
+                You can switch back at any time from your display manager's
+                session selector. Simply log out and choose your previous
+                desktop environment from the session menu before logging back
+                in.
+              </div>
+            </details>
 
-          <details class="group">
-            <summary
-              class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
-            >
-              <span>Does Morghulis work with NVIDIA proprietary drivers?</span>
-              <span
-                class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
-              ></span>
-            </summary>
-            <div
-              class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
-            >
-              Yes, Morghulis is compatible with NVIDIA proprietary drivers. Make
-              sure you're running the latest driver version for the best
-              experience. Some Wayland-specific features may require driver
-              version 495 or newer.
-            </div>
-          </details>
+            <details class="group">
+              <summary
+                class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
+              >
+                <span>Does Morghulis work with NVIDIA proprietary drivers?</span
+                >
+                <span
+                  class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
+                ></span>
+              </summary>
+              <div
+                class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
+              >
+                Yes, Morghulis is compatible with NVIDIA proprietary drivers.
+                Make sure you're running the latest driver version for the best
+                experience. Some Wayland-specific features may require driver
+                version 495 or newer.
+              </div>
+            </details>
+          </div>
         </div>
       </div>
     </div>
