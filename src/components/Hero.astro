@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import morghulisMain from "@assets/morghulisMain.webp";
+---
+
 <section class="flex flex-col items-center gap-8 text-center">
   <div class="flex flex-col gap-4">
     <h1
@@ -6,7 +11,7 @@
       A Beautifully Crafted Desktop Experience, Built for Performance
     </h1>
     <h2
-      class="max-w-2xl text-base sm:text-lg text-text-light dark:text-text-dark"
+      class="max-w-2xl text-base sm:text-lg mx-auto text-text-light dark:text-text-dark"
     >
       Minimal, fast, and customizable. The GTK shell designed for developers and
       creators.
@@ -20,12 +25,11 @@
   <div
     class="w-full mt-8 rounded-xl border border-black/10 dark:border-white/10 p-2 bg-card-light dark:bg-card-dark shadow-lg"
   >
-    <div
-      class="aspect-video w-full rounded-lg bg-cover bg-center"
-      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA7hOEErn5Ao88Co_TkCRLyNUB7jduGIw8hx3VY1-s_uVAdOfcLKO3Rdy64H619hmRgG3WWsuWrR8ixbVdMojvm8XPKmlE-9bFS2kZYrolItV10n95N4Ztps8YK46xZQ_KGfl5IPypKAHnqeEUUT_tR8oE-Q4HqIIXmYQNRdV707tlZ10B1LNJtZWGFIuGJSMLYslgyXoU5Jqek74HpEN7v7vc3ghHaHQuC_T6pjAQ-WTa3WlFqAju4KotxaGmyWyFHaIV4fX6rPv8Z');"
+    <Image
+      class="rounded-xl"
+      src={morghulisMain}
       role="img"
-      aria-label="A high-quality screenshot of the Morghulis desktop environment, showcasing its clean interface and modern design."
-    >
-    </div>
+      alt="A high-quality screenshot of the Morghulis desktop environment, showcasing its clean interface and modern design."
+    />
   </div>
 </section>

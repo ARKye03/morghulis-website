@@ -3,6 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import morghulisMain from "@assets/morghulisMain.webp";
 import { Image } from "astro:assets";
+import InstallationSteps from "@components/InstallationSteps.astro";
+import FAQ from "@components/FAQ.astro";
 ---
 
 <BaseLayout title="Morghulis Installation Guide">
@@ -66,83 +68,7 @@ import { Image } from "astro:assets";
           </div>
         </div>
 
-        <div
-          class="col-span-1 lg:col-span-2 lg:row-span-2 rounded-xl bg-card-light dark:bg-card-dark p-6"
-        >
-          <h2 class="text-xl font-bold mb-4">Installation Steps</h2>
-
-          <div class="space-y-8">
-            <div>
-              <h3 class="text-lg font-bold mb-4">Arch Linux</h3>
-              <ol
-                class="list-decimal list-inside space-y-4 text-subtext-light dark:text-subtext-dark"
-              >
-                <li>
-                  <span class="text-text-light dark:text-text-dark font-medium"
-                    >Install from AUR:</span
-                  >
-                  <div
-                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-                  >
-                    <code>yay -S morghulis-git</code>
-                  </div>
-                </li>
-                <li>
-                  <span class="text-text-light dark:text-text-dark font-medium"
-                    >Just launch it:</span
-                  >
-                  <div
-                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-                  >
-                    <code>morghulis --help</code>
-                  </div>
-                </li>
-              </ol>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-bold mb-4">Build from source</h3>
-              <ol
-                class="list-decimal list-inside space-y-4 text-subtext-light dark:text-subtext-dark"
-              >
-                <li>
-                  <span class="text-text-light dark:text-text-dark font-medium"
-                    >Clone the repository:</span
-                  >
-                  <div
-                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-                  >
-                    <code
-                      >git clone https://github.com/ARKye03/morghulis.git</code
-                    >
-                  </div>
-                </li>
-                <li>
-                  <span class="text-text-light dark:text-text-dark font-medium"
-                    >Build the project:</span
-                  >
-                  <div
-                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-                  >
-                    <code
-                      >cd morghulis && meson setup build && ninja -C build</code
-                    >
-                  </div>
-                </li>
-                <li>
-                  <span class="text-text-light dark:text-text-dark font-medium"
-                    >Run it:</span
-                  >
-                  <div
-                    class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-                  >
-                    <code>./build/src/morghulis --help</code>
-                  </div>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
+        <InstallationSteps />
 
         <div
           class="col-span-1 lg:col-span-1 rounded-xl bg-card-light dark:bg-card-dark overflow-hidden"
@@ -174,76 +100,7 @@ import { Image } from "astro:assets";
             </li>
           </ul>
         </div>
-
-        <div
-          class="col-span-1 lg:col-span-2 rounded-xl bg-card-light dark:bg-card-dark p-6"
-        >
-          <h2 class="text-xl font-bold mb-4">Frequently Asked Questions</h2>
-          <div class="space-y-3">
-            <details class="group">
-              <summary
-                class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
-              >
-                <span
-                  >Installation fails with a dependency error. What do I do?</span
-                >
-                <span
-                  class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
-                ></span>
-              </summary>
-              <div
-                class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
-              >
-                Ensure all prerequisites are met. Run <code
-                  class="bg-background-light dark:bg-background-dark px-2 py-0.5 rounded"
-                  >sudo apt -f install</code
-                > to attempt to fix broken dependencies. If the issue persists, please
-                open an issue on our GitHub repository with your distribution details
-                and the error message.
-              </div>
-            </details>
-
-            <details class="group">
-              <summary
-                class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
-              >
-                <span>How can I switch back to my old desktop environment?</span
-                >
-                <span
-                  class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
-                ></span>
-              </summary>
-              <div
-                class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
-              >
-                You can switch back at any time from your display manager's
-                session selector. Simply log out and choose your previous
-                desktop environment from the session menu before logging back
-                in.
-              </div>
-            </details>
-
-            <details class="group">
-              <summary
-                class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
-              >
-                <span>Does Morghulis work with NVIDIA proprietary drivers?</span
-                >
-                <span
-                  class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
-                ></span>
-              </summary>
-              <div
-                class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
-              >
-                Yes, Morghulis is compatible with NVIDIA proprietary drivers.
-                Make sure you're running the latest driver version for the best
-                experience. Some Wayland-specific features may require driver
-                version 495 or newer.
-              </div>
-            </details>
-          </div>
-        </div>
+        <FAQ />
       </div>
     </div>
   </main>

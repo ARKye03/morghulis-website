@@ -1,0 +1,63 @@
+<div
+  class="col-span-1 lg:col-span-2 rounded-xl bg-card-light dark:bg-card-dark p-6"
+>
+  <h2 class="text-xl font-bold mb-4">Frequently Asked Questions</h2>
+  <div class="space-y-3">
+    <details class="group">
+      <summary
+        class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
+      >
+        <span>Installation fails with a dependency error. What do I do?</span>
+        <span
+          class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
+        ></span>
+      </summary>
+      <div
+        class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
+      >
+        Ensure all prerequisites are met. Run <code
+          class="bg-background-light dark:bg-background-dark px-2 py-0.5 rounded"
+          >sudo apt -f install</code
+        > to attempt to fix broken dependencies. If the issue persists, please open
+        an issue on our GitHub repository with your distribution details and the
+        error message.
+      </div>
+    </details>
+
+    <details class="group">
+      <summary
+        class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
+      >
+        <span>How can I switch back to my old desktop environment?</span>
+        <span
+          class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
+        ></span>
+      </summary>
+      <div
+        class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
+      >
+        You can switch back at any time from your display manager's session
+        selector. Simply log out and choose your previous desktop environment
+        from the session menu before logging back in.
+      </div>
+    </details>
+
+    <details class="group">
+      <summary
+        class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
+      >
+        <span>Does Morghulis work with NVIDIA proprietary drivers?</span>
+        <span
+          class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
+        ></span>
+      </summary>
+      <div
+        class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
+      >
+        Yes, Morghulis is compatible with NVIDIA proprietary drivers. Make sure
+        you're running the latest driver version for the best experience. Some
+        Wayland-specific features may require driver version 495 or newer.
+      </div>
+    </details>
+  </div>
+</div>

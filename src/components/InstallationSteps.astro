@@ -1,0 +1,73 @@
+<div
+  class="col-span-1 lg:col-span-2 lg:row-span-2 rounded-xl bg-card-light dark:bg-card-dark p-6"
+>
+  <h2 class="text-xl font-bold mb-4">Installation Steps</h2>
+
+  <div class="space-y-8">
+    <div>
+      <h3 class="text-lg font-bold mb-4">Arch Linux</h3>
+      <ol
+        class="list-decimal list-inside space-y-4 text-subtext-light dark:text-subtext-dark"
+      >
+        <li>
+          <span class="text-text-light dark:text-text-dark font-medium"
+            >Install from AUR:</span
+          >
+          <div
+            class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+          >
+            <code>yay -S morghulis-git</code>
+          </div>
+        </li>
+        <li>
+          <span class="text-text-light dark:text-text-dark font-medium"
+            >Just launch it:</span
+          >
+          <div
+            class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+          >
+            <code>morghulis --help</code>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-bold mb-4">Build from source</h3>
+      <ol
+        class="list-decimal list-inside space-y-4 text-subtext-light dark:text-subtext-dark"
+      >
+        <li>
+          <span class="text-text-light dark:text-text-dark font-medium"
+            >Clone the repository:</span
+          >
+          <div
+            class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+          >
+            <code>git clone https://github.com/ARKye03/morghulis.git</code>
+          </div>
+        </li>
+        <li>
+          <span class="text-text-light dark:text-text-dark font-medium"
+            >Build the project:</span
+          >
+          <div
+            class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+          >
+            <code>cd morghulis && meson setup build && ninja -C build</code>
+          </div>
+        </li>
+        <li>
+          <span class="text-text-light dark:text-text-dark font-medium"
+            >Run it:</span
+          >
+          <div
+            class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
+          >
+            <code>./build/src/morghulis --help</code>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
