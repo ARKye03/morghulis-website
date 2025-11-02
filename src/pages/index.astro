@@ -4,9 +4,30 @@ import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import BentoGrid from "../components/BentoGrid.astro";
 import Footer from "../components/Footer.astro";
+import morghulisLogo from "@assets/morghulisText.svg";
+import morghulisBackground from "@assets/morghulisFull.webp";
+import { Image } from "astro:assets";
 ---
 
 <BaseLayout title="Morghulis - A Beautifully Crafted Desktop Experience">
+  <div id="logo-mask" class="fixed top-0 w-full h-screen">
+    <section>
+      <picture id="hero-key" class="h-screen scale-125 block overflow-hidden">
+        <Image
+          id="hero-key-logo"
+          src={morghulisLogo}
+          alt="Morghulis Desktop Shell"
+          class="absolute h-full w-full object-cover"
+        />
+        <Image
+          id="hero-key-background"
+          src={morghulisBackground}
+          alt="Morghulis Desktop Shell"
+          class="w-full h-full object-cover"
+        />
+      </picture>
+    </section>
+  </div>
   <Header />
   <main class="flex-1">
     <div class="container mx-auto max-w-5xl px-4 py-16 sm:py-24">
@@ -16,3 +37,34 @@ import Footer from "../components/Footer.astro";
   </main>
   <Footer />
 </BaseLayout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      scrub: 1,
+    },
+  });
+
+  timeline
+    .to("#hero-key-logo", {
+      scale: 0.8,
+      y: -200,
+      opacity: 0,
+      ease: "power1.out",
+      duration: 1,
+    })
+    .to(
+      "#hero-key",
+      {
+        scale: 1,
+        ease: "power1.out",
+        duration: 1,
+      },
+      "<"
+    );
+</script>
