@@ -10,7 +10,7 @@ import { Image } from "astro:assets";
 ---
 
 <BaseLayout title="Morghulis - A Beautifully Crafted Desktop Experience">
-  <div id="logo-mask" class="fixed top-0 w-full h-screen">
+  <div id="logo-mask" class="fixed top-0 w-full h-screen z-50">
     <section class="relative h-full">
       <picture id="hero-key" class="h-screen scale-125 block overflow-hidden">
         <Image
@@ -28,13 +28,16 @@ import { Image } from "astro:assets";
       </picture>
     </section>
   </div>
-  <Header />
-  <main class="flex-1">
-    <div class="container mx-auto max-w-5xl px-4 py-16 sm:py-24">
-      <Hero />
-      <BentoGrid />
-    </div>
-  </main>
+  <div id="content-wrapper" class="relative z-40">
+    <div id="spacer" class="h-[150vh]"></div>
+    <Header id="main-header" class="opacity-0 transform -translate-y-full" />
+    <main class="flex-1">
+      <div class="container mx-auto max-w-5xl px-4 py-16 sm:py-24">
+        <Hero />
+        <BentoGrid />
+      </div>
+    </main>
+  </div>
   <Footer />
 </BaseLayout>
 
@@ -44,7 +47,7 @@ import { Image } from "astro:assets";
     mask-image: url("/src/assets/morghulisText.svg");
     mask-position: center 25%;
     mask-repeat: no-repeat;
-    mask-size: clamp(5000vh, 3500%, 0vh);
+    mask-size: clamp(45000vh, 3500%, 0vh);
   }
 </style>
 
@@ -55,15 +58,20 @@ import { Image } from "astro:assets";
   gsap.registerPlugin(ScrollTrigger);
 
   const timeline = gsap.timeline({
-    ease: "power2.out",
+    ease: "power1.out",
     scrollTrigger: {
+      trigger: "#spacer",
+      start: "top top",
+      end: "bottom top",
       scrub: 1,
+      pin: false,
     },
   });
 
   timeline
     .to("#hero-key-logo", {
       opacity: 0,
+      duration: 0.5,
     })
     .to(
       "#hero-key",
@@ -77,14 +85,32 @@ import { Image } from "astro:assets";
       {
         maskSize: "clamp(20vh, 25%, 30vh)",
       },
-      0.15
+      0.25
     )
     .to(
       "#hero-key",
       {
         opacity: 0,
-        duration: 0.2,
+        duration: 0.3,
       },
-      0.4
+      0.7
+    )
+    .to(
+      "#logo-mask",
+      {
+        opacity: 0,
+        pointerEvents: "none",
+        duration: 0.3,
+      },
+      0.85
+    )
+    .to(
+      "#main-header",
+      {
+        transform: "translateY(0)",
+        opacity: 1,
+        duration: 0.5,
+      },
+      0.9
     );
 </script>
