@@ -39,7 +39,7 @@ import { Image } from "astro:assets";
       </section>
     </div>
     <div id="content-wrapper" class="relative z-40">
-      <div id="spacer" class="h-[150vh]"></div>
+      <div id="spacer" class="h-[130vh]"></div>
       <Header />
       <main class="flex-1">
         <div class="container mx-auto max-w-5xl px-4 py-16 sm:py-24">
@@ -99,18 +99,11 @@ import { Image } from "astro:assets";
     .to(
       "#hero-key-text",
       {
+        opacity: 0,
         fontSize: "10rem",
         duration: 0.5,
       },
       0.25
-    )
-    .to(
-      "#hero-key-text",
-      {
-        opacity: 0,
-        duration: 0.3,
-      },
-      "<"
     )
     .to(
       "#logo-mask",
@@ -141,7 +134,7 @@ import { Image } from "astro:assets";
       {
         transform: "translateY(0)",
         opacity: 1,
-        duration: 0.5,
+        duration: 1,
       },
       "<"
     );
