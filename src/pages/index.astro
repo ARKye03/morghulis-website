@@ -14,17 +14,24 @@ import { Image } from "astro:assets";
     <div id="logo-mask" class="fixed top-0 w-full h-screen z-50">
       <section class="relative h-full">
         <picture id="hero-key" class="h-screen scale-125 block overflow-hidden">
-          <Image
-            id="hero-key-logo"
-            src={morghulisLogo}
-            alt="Morghulis Desktop Shell"
-            class="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-1/2 h-auto z-10"
-          />
+          <div
+            class="absolute left-1/2 top-2/5 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center w-1/4 h-auto"
+          >
+            <Image
+              id="hero-key-logo"
+              src={morghulisLogo}
+              alt="Morghulis Desktop Shell"
+              class="w-full h-auto"
+            />
+            <span id="hero-key-text" class="text-white text-5xl font-bold"
+              >MORGHULIS</span
+            >
+          </div>
           <Image
             id="hero-key-background"
             src={morghulisBackground}
             alt="Morghulis Desktop Shell"
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover blur-md"
           />
         </picture>
       </section>
@@ -50,11 +57,11 @@ import { Image } from "astro:assets";
   }
 
   #logo-mask {
-    background: white;
+    background: var(--color-primary-dark);
     mask-image: url("/src/assets/morghulisText.svg");
-    mask-position: center 25%;
+    mask-position: center 27.5%;
     mask-repeat: no-repeat;
-    mask-size: clamp(45000vh, 3500%, 0vh);
+    mask-size: clamp(2000vh, 2500%, 0vh);
   }
 </style>
 
@@ -84,6 +91,22 @@ import { Image } from "astro:assets";
       "#hero-key",
       {
         scale: 1,
+      },
+      "<"
+    )
+    .to(
+      "#hero-key-text",
+      {
+        fontSize: "10rem",
+        duration: 1,
+      },
+      0.25
+    )
+    .to(
+      "#hero-key-text",
+      {
+        color: "var(--color-primary-dark)",
+        duration: 1,
       },
       "<"
     )
