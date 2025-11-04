@@ -24,9 +24,6 @@ import { Image } from "astro:assets";
               class="w-full h-auto"
               loading="eager"
             />
-            <span id="hero-key-text" class="text-white text-5xl font-bold"
-              >MORGHULIS</span
-            >
           </div>
           <Image
             id="hero-key-background"
@@ -39,7 +36,7 @@ import { Image } from "astro:assets";
       </section>
     </div>
     <div id="content-wrapper" class="relative z-40">
-      <div id="spacer" class="h-[130vh]"></div>
+      <div id="spacer" class="h-[400vh]"></div>
       <Header />
       <main class="flex-1">
         <div class="container mx-auto max-w-5xl px-4 py-16 sm:py-24">
@@ -64,6 +61,10 @@ import { Image } from "astro:assets";
     mask-position: center 27.5%;
     mask-repeat: no-repeat;
     mask-size: clamp(2000vh, 2500%, 0vh);
+  }
+
+  #hero-key-logo {
+    filter: brightness(0) invert(1);
   }
 </style>
 
@@ -95,15 +96,6 @@ import { Image } from "astro:assets";
         scale: 1,
       },
       "<"
-    )
-    .to(
-      "#hero-key-text",
-      {
-        opacity: 0,
-        fontSize: "10rem",
-        duration: 0.5,
-      },
-      0.25
     )
     .to(
       "#logo-mask",
