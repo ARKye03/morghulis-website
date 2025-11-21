@@ -1,3 +1,7 @@
+---
+import { Code } from "astro/components";
+---
+
 <div
   class="col-span-1 lg:col-span-2 lg:row-span-2 rounded-xl bg-card-light dark:bg-card-dark p-6"
 >
@@ -13,21 +17,21 @@
           <span class="text-text-light dark:text-text-dark font-medium"
             >Install from AUR:</span
           >
-          <div
-            class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-          >
-            <code>yay -S morghulis-git</code>
-          </div>
+          <Code
+            class="rounded-md p-2 mt-2"
+            code={`yay -S morghulis-git`}
+            lang="sh"
+          />
         </li>
         <li>
           <span class="text-text-light dark:text-text-dark font-medium"
             >Just launch it:</span
           >
-          <div
-            class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-          >
-            <code>morghulis --help</code>
-          </div>
+          <Code
+            class="rounded-md p-2 mt-2"
+            code={`morghulis --help`}
+            lang="sh"
+          />
         </li>
       </ol>
     </div>
@@ -41,31 +45,27 @@
           <span class="text-text-light dark:text-text-dark font-medium"
             >Clone the repository:</span
           >
-          <div
-            class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-          >
-            <code>git clone https://github.com/ARKye03/morghulis.git</code>
-          </div>
+          <Code
+            class="rounded-md p-2 mt-2"
+            code={`git clone https://github.com/ARKye03/morghulis.git`}
+            lang="sh"
+          />
         </li>
         <li>
           <span class="text-text-light dark:text-text-dark font-medium"
             >Build the project:</span
           >
-          <div
-            class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-          >
-            <code>cd morghulis && meson setup build && ninja -C build</code>
-          </div>
+          <Code
+            class="rounded-md p-2 mt-2"
+            code={`cd morghulis; just build`}
+            lang="sh"
+          />
         </li>
         <li>
           <span class="text-text-light dark:text-text-dark font-medium"
             >Run it:</span
           >
-          <div
-            class="relative group bg-background-light dark:bg-background-dark rounded-lg mt-2 p-4 font-mono text-sm"
-          >
-            <code>./build/src/morghulis --help</code>
-          </div>
+          <Code class="rounded-md p-2 mt-2" code={`just`} lang="sh" />
         </li>
       </ol>
     </div>

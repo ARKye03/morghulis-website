@@ -1,3 +1,7 @@
+---
+import { Code } from "astro/components";
+---
+
 <div
   class="col-span-1 lg:col-span-2 rounded-xl bg-card-light dark:bg-card-dark p-6"
 >
@@ -15,12 +19,7 @@
       <div
         class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
       >
-        Ensure all prerequisites are met. Run <code
-          class="bg-background-light dark:bg-background-dark px-2 py-0.5 rounded"
-          >sudo apt -f install</code
-        > to attempt to fix broken dependencies. If the issue persists, please open
-        an issue on our GitHub repository with your distribution details and the
-        error message.
+        You're missing a dependency duh
       </div>
     </details>
 
@@ -28,7 +27,7 @@
       <summary
         class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
       >
-        <span>How can I switch back to my old desktop environment?</span>
+        <span>How can I have the Bar at top?</span>
         <span
           class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
         ></span>
@@ -36,9 +35,15 @@
       <div
         class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
       >
-        You can switch back at any time from your display manager's session
-        selector. Simply log out and choose your previous desktop environment
-        from the session menu before logging back in.
+        <p>
+          You either
+          <Code
+            code={`$ gsettings set com.arkye.morghulis navbar-anchor "top"`}
+            lang="sh"
+            inline
+          />
+          or you change it in the QuickMenu and reload Morghulis.
+        </p>
       </div>
     </details>
 
