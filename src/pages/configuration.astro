@@ -1,0 +1,234 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { Code } from "astro/components";
+
+const exampleCss = `:root {
+  --accent-bg-color: var(--purple-3);
+  --window-bg-color: #000000;
+  --window-fg-color: #ffffff;
+  --view-bg-color: #1e1e1e;
+  --headerbar-bg-color: #1e1e1e;
+  --card-bg-color: rgba(255, 255, 255, 0.08);
+  --popover-bg-color: #1e1e1e;
+  --destructive-bg-color: #a51d2d;
+  --success-bg-color: #26a269;
+}`;
+
+const colorGroups = [
+  {
+    name: "Window",
+    vars: ["--window-bg-color", "--window-fg-color"],
+  },
+  {
+    name: "View",
+    vars: ["--view-bg-color", "--view-fg-color"],
+  },
+  {
+    name: "Header bar",
+    vars: ["--headerbar-bg-color", "--headerbar-fg-color"],
+  },
+  {
+    name: "Cards",
+    vars: ["--card-bg-color", "--card-fg-color"],
+  },
+  {
+    name: "Popovers",
+    vars: ["--popover-bg-color", "--popover-fg-color"],
+  },
+  {
+    name: "Accent",
+    vars: ["--accent-bg-color", "--accent-fg-color", "--accent-color"],
+  },
+  {
+    name: "States",
+    vars: [
+      "--destructive-bg-color",
+      "--success-bg-color",
+      "--warning-bg-color",
+      "--error-bg-color",
+    ],
+  },
+];
+
+const palette = [
+  "blue",
+  "green",
+  "yellow",
+  "orange",
+  "red",
+  "purple",
+  "brown",
+  "light",
+  "dark",
+];
+
+const settings = [
+  {
+    key: "gtk-theme",
+    value: "true",
+    detail: "Use the bundled black Adwaita style",
+  },
+  { key: "navbar-anchor", value: '"bottom"', detail: '"top" or "bottom"' },
+  {
+    key: "notifications-default-timeout",
+    value: "5000",
+    detail: "Notification popup timeout, in ms",
+  },
+  { key: "osd-timeout", value: "3000", detail: "OSD hide delay, in ms" },
+  { key: "night-light", value: "false", detail: "Warm color temperature" },
+  {
+    key: "night-temp",
+    value: "4000",
+    detail: "Night light Kelvin, 2500 to 6500",
+  },
+  {
+    key: "clipboard-max-entries",
+    value: "50",
+    detail: "Clipboard history size, 1 to 200",
+  },
+];
+---
+
+<BaseLayout title="Configuration - Morghulis">
+  <Header />
+  <main class="flex-1 px-4 py-10 md:px-10">
+    <div class="mx-auto flex max-w-5xl flex-col gap-8">
+      <section class="card p-6 md:p-8">
+        <h1 class="mb-4 text-4xl font-bold tracking-tighter md:text-5xl">
+          Configuration
+        </h1>
+        <p class="dim-label max-w-3xl text-base md:text-lg">
+          Morghulis is styled with plain GTK CSS. Override Libadwaita's named
+          colors to theme the shell without touching your system-wide GTK theme.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-3 px-1 text-sm font-bold">Custom style</h2>
+        <div class="card boxed-list">
+          <div class="flex items-start gap-3 p-4">
+            <span
+              class="icon-[lucide--file-code] text-accent mt-0.5 shrink-0 text-xl"
+            ></span>
+            <div>
+              <h3 class="font-bold">Your stylesheet</h3>
+              <p class="dim-label text-sm">
+                Create <code>$XDG_CONFIG_HOME/morghulis/main.css</code> (usually{
+                  " "
+                }
+                <code>~/.config/morghulis/main.css</code>). It loads at user
+                priority, on top of the built-in style.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-4">
+            <span
+              class="icon-[lucide--refresh-cw] text-accent mt-0.5 shrink-0 text-xl"
+            ></span>
+            <div>
+              <h3 class="font-bold">Hot reload</h3>
+              <p class="dim-label text-sm">
+                Morghulis watches the file. Saving it applies your changes
+                immediately, and creating it loads it without a restart.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-4">
+            <span
+              class="icon-[lucide--palette] text-accent mt-0.5 shrink-0 text-xl"
+            ></span>
+            <div>
+              <h3 class="font-bold">Built-in theme</h3>
+              <p class="dim-label mb-2 text-sm">
+                Morghulis ships a black Adwaita style. Turn it off to follow
+                your GTK theme instead:
+              </p>
+              <Code
+                class="rounded-md p-2 text-sm"
+                code={`gsettings set com.arkye.morghulis gtk-theme false`}
+                lang="sh"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="mb-3 px-1 text-sm font-bold">Example</h2>
+        <div class="card p-4">
+          <p class="dim-label mb-3 text-sm">
+            An excerpt of the bundled style. Copy it to <code>main.css</code> and
+            change any value:
+          </p>
+          <Code class="rounded-md p-4 text-sm" code={exampleCss} lang="css" />
+        </div>
+      </section>
+
+      <section>
+        <h2 class="mb-3 px-1 text-sm font-bold">Adwaita named colors</h2>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <ul class="card boxed-list">
+            {
+              colorGroups.map((group) => (
+                <li class="flex flex-col gap-1 p-4">
+                  <h3 class="font-bold">{group.name}</h3>
+                  {group.vars.map((name) => (
+                    <code class="dim-label text-sm">{name}</code>
+                  ))}
+                </li>
+              ))
+            }
+          </ul>
+          <div class="card flex flex-col gap-4 p-4">
+            <p class="dim-label text-sm">
+              Palette colors <code>--blue-1</code> to <code>--dark-5</code> are available
+              too:
+            </p>
+            {
+              palette.map((hue) => (
+                <div class="flex items-center gap-3">
+                  <span class="w-16 text-sm capitalize">{hue}</span>
+                  <div class="flex flex-1 gap-1">
+                    {[1, 2, 3, 4, 5].map((shade) => (
+                      <span
+                        class="h-8 flex-1 rounded-md"
+                        style={`background-color: var(--${hue}-${shade})`}
+                        title={`--${hue}-${shade}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="mb-3 px-1 text-sm font-bold">Settings</h2>
+        <p class="dim-label mb-3 px-1 text-sm">
+          Other options live in GSettings under <code>com.arkye.morghulis</code
+          >. Set them with <code
+            >gsettings set com.arkye.morghulis KEY VALUE</code
+          >.
+        </p>
+        <ul class="card boxed-list">
+          {
+            settings.map((setting) => (
+              <li class="flex flex-col gap-1 p-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <code class="font-bold">{setting.key}</code>
+                  <p class="dim-label text-sm">{setting.detail}</p>
+                </div>
+                <code class="dim-label text-sm">default {setting.value}</code>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,108 +1,140 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 import morghulisMain from "@assets/morghulisMain.webp";
 import { Image } from "astro:assets";
+import { Code } from "astro/components";
 import InstallationSteps from "@components/InstallationSteps.astro";
 import FAQ from "@components/FAQ.astro";
+
+const prerequisites = [
+  {
+    icon: "icon-[lucide--monitor]",
+    title: "Compositor",
+    detail: "River or Hyprland",
+  },
+  {
+    icon: "icon-[lucide--hammer]",
+    title: "Build tools",
+    detail: "Vala, Meson, Just, Blueprint-Compiler",
+  },
+  {
+    icon: "icon-[lucide--layers]",
+    title: "Toolkit",
+    detail: "GTK4, gtk4-layer-shell, Libadwaita and the Adwaita theme",
+  },
+  {
+    icon: "icon-[lucide--puzzle]",
+    title: "Astal",
+    detail:
+      "Tray, Wireplumber, Mpris, NotifD, Network, Bluetooth, Apps, Battery, Power Profiles, plus River or Hyprland",
+  },
+  {
+    icon: "icon-[lucide--package]",
+    title: "Libraries",
+    detail: "GSound, libgtop, muparser, CMark, JsonGLib, libsoup, libportal",
+  },
+];
 ---
 
-<BaseLayout title="Morghulis Installation Guide">
+<BaseLayout title="Installation - Morghulis">
   <Header />
-  <main class="flex-1 px-4 py-10 md:px-10 lg:px-20">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:grid-rows-3">
-        <div
-          class="bg-card-light dark:bg-card-dark col-span-1 flex flex-col justify-center rounded-xl p-6 md:p-8 lg:col-span-3"
-        >
-          <h1 class="mb-4 text-4xl font-bold tracking-tighter md:text-5xl">
-            Installation Guide
-          </h1>
-          <p
-            class="text-subtext-light dark:text-subtext-dark max-w-3xl text-base md:text-lg"
-          >
-            Your step-by-step guide to setting up Morghulis, our GTK-based
-            graphical desktop shell for Linux. Follow the instructions for your
-            distribution to get started.
-          </p>
-        </div>
+  <main class="flex-1 px-4 py-10 md:px-10">
+    <div class="mx-auto grid max-w-5xl grid-cols-1 gap-6 lg:grid-cols-3">
+      <section
+        class="card flex flex-col justify-center p-6 md:p-8 lg:col-span-3"
+      >
+        <h1 class="mb-4 text-4xl font-bold tracking-tighter md:text-5xl">
+          Installation Guide
+        </h1>
+        <p class="dim-label max-w-3xl text-base md:text-lg">
+          Morghulis is a Wayland desktop shell built with GTK4, Libadwaita and
+          Astal. Install the requirements, then grab it from the AUR or build it
+          from source.
+        </p>
+      </section>
 
-        <div
-          class="bg-card-light dark:bg-card-dark col-span-1 rounded-xl p-6 lg:col-span-1"
-        >
-          <h2 class="mb-4 text-xl font-bold">Prerequisites</h2>
-          <div class="space-y-4">
-            <div class="flex items-start gap-3">
-              <span
-                class="iconify lucide--layers text-primary-light dark:text-primary-dark mt-1 text-xl"
-              ></span>
-              <div>
-                <h3 class="font-bold">GTK 4.x+</h3>
-                <p class="text-subtext-light dark:text-subtext-dark text-sm">
-                  Ensure you have the latest GTK libraries installed.
-                </p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <span
-                class="iconify lucide--git-branch text-primary-light dark:text-primary-dark mt-1 text-xl"
-              ></span>
-              <div>
-                <h3 class="font-bold">Systemd</h3>
-                <p class="text-subtext-light dark:text-subtext-dark text-sm">
-                  A systemd-based Linux distribution is required.
-                </p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <span
-                class="iconify lucide--hard-drive text-primary-light dark:text-primary-dark mt-1 text-xl"
-              ></span>
-              <div>
-                <h3 class="font-bold">Disk Space</h3>
-                <p class="text-subtext-light dark:text-subtext-dark text-sm">
-                  At least 2GB of free disk space is recommended.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section class="lg:col-span-1">
+        <h2 class="mb-3 px-1 text-sm font-bold">Requirements</h2>
+        <ul class="card boxed-list">
+          {
+            prerequisites.map((item) => (
+              <li class="flex items-start gap-3 p-4">
+                <span
+                  class={`${item.icon} text-accent mt-0.5 shrink-0 text-xl`}
+                />
+                <div>
+                  <h3 class="font-bold">{item.title}</h3>
+                  <p class="dim-label text-sm">{item.detail}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="dim-label mt-3 px-1 text-xs">
+          The River and Hyprland Astal modules are optional when building from
+          source; the binary release needs everything.
+        </p>
+      </section>
 
-        <InstallationSteps />
+      <InstallationSteps />
 
-        <div
-          class="bg-card-light dark:bg-card-dark col-span-1 overflow-hidden rounded-xl lg:col-span-1"
-        >
-          <Image
-            alt="A screenshot of the Morghulis desktop environment"
-            src={morghulisMain}
-            loading="eager"
-          />
-        </div>
-
-        <div
-          class="bg-card-light dark:bg-card-dark col-span-1 rounded-xl p-6 lg:col-span-1"
-        >
-          <h2 class="mb-4 text-xl font-bold">Post-Installation</h2>
-          <ul
-            class="text-subtext-light dark:text-subtext-dark list-inside list-disc space-y-2"
-          >
-            <li class="text-text-light dark:text-text-dark">
-              Log in to your new session.
-            </li>
-            <li class="text-text-light dark:text-text-dark">
-              Run the first-time setup wizard.
-            </li>
-            <li class="text-text-light dark:text-text-dark">
-              Explore settings to customize your experience.
-            </li>
-            <li class="text-text-light dark:text-text-dark">
-              Check our docs for advanced configuration.
-            </li>
-          </ul>
-        </div>
-        <FAQ />
+      <div class="card overflow-hidden lg:col-span-1">
+        <Image
+          alt="A screenshot of the Morghulis desktop environment"
+          src={morghulisMain}
+          loading="eager"
+          class="h-full w-full object-cover"
+        />
       </div>
+
+      <section class="lg:col-span-2">
+        <h2 class="mb-3 px-1 text-sm font-bold">After installing</h2>
+        <ul class="card boxed-list">
+          <li class="p-4">
+            <h3 class="font-bold">Launch it</h3>
+            <p class="dim-label text-sm">
+              Start <code>morghulis</code> from your River or Hyprland session. Run{
+                " "
+              }
+              <code>morghulis --help</code> for the CLI commands that toggle windows
+              and open the inspector.
+            </p>
+          </li>
+          <li class="p-4">
+            <h3 class="font-bold">Backlight</h3>
+            <p class="dim-label text-sm">
+              Add your user to the <code>video</code> group to use backlight services.
+            </p>
+          </li>
+          <li class="p-4">
+            <h3 class="font-bold">On-screen display</h3>
+            <p class="dim-label mb-2 text-sm">
+              Append <code>morghulis -r change_volume</code> or{" "}
+              <code>morghulis -r change_brightness</code> to your volume and brightness
+              keybindings, for example in Hyprland:
+            </p>
+            <Code
+              class="rounded-md p-2 text-sm"
+              code={`binde=, XF86MonBrightnessUp, exec, brightnessctl set +10% & morghulis -r change_brightness`}
+              lang="sh"
+            />
+          </li>
+          <li class="p-4">
+            <h3 class="font-bold">Customize</h3>
+            <p class="dim-label text-sm">
+              Restyle the shell with your own CSS. See the{" "}
+              <a class="text-accent underline" href="/configuration"
+                >configuration guide</a
+              >.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <FAQ />
     </div>
   </main>
+  <Footer />
 </BaseLayout>

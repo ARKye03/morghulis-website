@@ -2,67 +2,77 @@
 import { Code } from "astro/components";
 ---
 
-<div
-  class="bg-card-light dark:bg-card-dark col-span-1 rounded-xl p-6 lg:col-span-2"
->
-  <h2 class="mb-4 text-xl font-bold">Frequently Asked Questions</h2>
-  <div class="space-y-3">
+<section class="lg:col-span-3">
+  <h2 class="mb-3 px-1 text-sm font-bold">Frequently Asked Questions</h2>
+  <div class="card boxed-list">
     <details class="group">
       <summary
-        class="flex w-full cursor-pointer list-none items-center justify-between py-2 text-left font-medium"
+        class="hover:bg-shade flex w-full cursor-pointer list-none items-center justify-between gap-4 p-4 text-left font-medium"
       >
         <span>Installation fails with a dependency error. What do I do?</span>
         <span
-          class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
+          class="icon-[lucide--chevron-down] dim-label shrink-0 transition-transform group-open:rotate-180"
         ></span>
       </summary>
-      <div
-        class="text-subtext-light dark:text-subtext-dark border-t border-white/10 pt-2 pb-4 text-sm"
-      >
-        You're missing a dependency duh
+      <div class="dim-label px-4 pb-4 text-sm">
+        A library from the requirements list is missing. Building from source
+        needs every listed library, including the Astal modules; only the River
+        and Hyprland Astal modules are optional.
       </div>
     </details>
 
     <details class="group">
       <summary
-        class="flex w-full cursor-pointer list-none items-center justify-between py-2 text-left font-medium"
+        class="hover:bg-shade flex w-full cursor-pointer list-none items-center justify-between gap-4 p-4 text-left font-medium"
       >
-        <span>How can I have the Bar at top?</span>
+        <span>How can I have the bar at the top?</span>
         <span
-          class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
+          class="icon-[lucide--chevron-down] dim-label shrink-0 transition-transform group-open:rotate-180"
         ></span>
       </summary>
-      <div
-        class="text-subtext-light dark:text-subtext-dark border-t border-white/10 pt-2 pb-4 text-sm"
-      >
+      <div class="px-4 pb-4 text-sm">
         <p>
-          You either
+          Either run{" "}
           <Code
-            code={`$ gsettings set com.arkye.morghulis navbar-anchor "top"`}
+            code={`gsettings set com.arkye.morghulis navbar-anchor "top"`}
             lang="sh"
             inline
-          />
-          or you change it in the QuickMenu and reload Morghulis.
+          />{" "}
+          or change it in the Quick Menu, then reload Morghulis.
         </p>
       </div>
     </details>
 
     <details class="group">
       <summary
-        class="flex w-full cursor-pointer list-none items-center justify-between py-2 text-left font-medium"
+        class="hover:bg-shade flex w-full cursor-pointer list-none items-center justify-between gap-4 p-4 text-left font-medium"
+      >
+        <span>Brightness controls or the brightness OSD do nothing.</span>
+        <span
+          class="icon-[lucide--chevron-down] dim-label shrink-0 transition-transform group-open:rotate-180"
+        ></span>
+      </summary>
+      <div class="dim-label px-4 pb-4 text-sm">
+        Your user must be in the <code>video</code> group to use backlight services,
+        and the OSD only shows when your keybinding also runs{" "}
+        <code>morghulis -r change_brightness</code>.
+      </div>
+    </details>
+
+    <details class="group">
+      <summary
+        class="hover:bg-shade flex w-full cursor-pointer list-none items-center justify-between gap-4 p-4 text-left font-medium"
       >
         <span>Does Morghulis work with NVIDIA proprietary drivers?</span>
         <span
-          class="iconify lucide--chevron-down transition-transform group-open:rotate-180"
+          class="icon-[lucide--chevron-down] dim-label shrink-0 transition-transform group-open:rotate-180"
         ></span>
       </summary>
-      <div
-        class="text-subtext-light dark:text-subtext-dark border-t border-white/10 pt-2 pb-4 text-sm"
-      >
+      <div class="dim-label px-4 pb-4 text-sm">
         Yes, Morghulis is compatible with NVIDIA proprietary drivers. Make sure
         you're running the latest driver version for the best experience. Some
         Wayland-specific features may require driver version 495 or newer.
       </div>
     </details>
   </div>
-</div>
+</section>

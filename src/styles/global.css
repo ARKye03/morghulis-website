@@ -157,18 +157,6 @@
   --color-popover-bg: var(--popover-bg-color);
   --color-popover-fg: var(--popover-fg-color);
   --color-shade: var(--shade-color);
-
-  /* Legacy light/dark pairs, kept until L4/L5 move components to the tokens above */
-  --color-primary-light: var(--purple-1);
-  --color-primary-dark: var(--purple-3);
-  --color-background-light: #fafafb;
-  --color-background-dark: #000000;
-  --color-text-light: rgb(0 0 6 / 80%);
-  --color-text-dark: #ffffff;
-  --color-subtext-light: rgb(0 0 6 / 55%);
-  --color-subtext-dark: rgb(255 255 255 / 55%);
-  --color-card-light: #ffffff;
-  --color-card-dark: rgb(255 255 255 / 8%);
 }
 
 @theme {
@@ -187,7 +175,7 @@
   --radius-pill: 9999px;
 }
 
-/* libadwaita style classes: .card, .pill + .suggested-action, .dim-label */
+/* libadwaita style classes: .card, .boxed-list, .pill + .suggested-action, .dim-label */
 @utility card {
   background-color: var(--card-bg-color);
   color: var(--card-fg-color);
@@ -195,6 +183,15 @@
   box-shadow:
     0 0 0 1px var(--card-shade-color),
     0 1px 3px 1px var(--card-shade-color);
+}
+
+/* Pair with .card: rows separated like an AdwPreferencesGroup */
+@utility boxed-list {
+  overflow: hidden;
+
+  & > * + * {
+    border-top: 1px solid var(--card-shade-color);
+  }
 }
 
 @utility pill {

@@ -1,77 +1,51 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
-import "../styles/global.css";
 ---
 
-<BaseLayout title="404 Not Found - AstroShell">
-  <div class="flex h-full grow flex-col">
-    <div class="flex flex-1 justify-center px-4 py-5 sm:px-8 md:px-16 lg:px-20">
-      <div class="flex w-full max-w-5xl flex-col">
-        <Header />
-
-        <main class="flex-1 py-12 sm:py-16 md:py-24">
-          <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <div
-              class="bg-surface-light dark:bg-surface-dark flex min-h-[200px] items-center justify-center rounded-xl p-6 sm:p-8 md:col-span-2 md:min-h-[300px]"
-            >
-              <h1
-                class="text-primary-light dark:text-primary-dark text-8xl leading-none font-black tracking-tighter sm:text-9xl md:text-[160px] lg:text-[200px]"
-              >
-                404
-              </h1>
-            </div>
-
-            <div
-              class="bg-surface-light dark:bg-surface-dark flex flex-col items-center justify-center gap-4 rounded-xl p-6 text-center sm:p-8"
-            >
-              <div class="text-primary-light dark:text-primary-dark size-16">
-                <span
-                  class="icon-[dinkie-icons--dragon-face] text-primary-light dark:text-primary-dark text-5xl"
-                ></span>
-              </div>
-              <p class="text-lg font-bold">Morghulis</p>
-              <p
-                class="text-text-secondary-light dark:text-text-secondary-dark text-sm"
-              >
-                A modern graphical shell for Linux, built with GTK.
-              </p>
-            </div>
-
-            <div
-              class="bg-surface-light dark:bg-surface-dark flex flex-col justify-center rounded-xl p-6 sm:p-8"
-            >
-              <p
-                class="text-3xl leading-tight font-black tracking-[-0.033em] sm:text-4xl"
-              >
-                Page Not Found
-              </p>
-              <p
-                class="text-text-secondary-light dark:text-text-secondary-dark mt-3 text-base leading-normal font-normal"
-              >
-                Sorry, the page you are looking for doesn't exist or has been
-                moved.
-              </p>
-            </div>
-
-            <div
-              class="bg-primary-light dark:bg-primary-dark group flex flex-col items-center justify-center rounded-xl p-6 transition-opacity hover:opacity-95 sm:p-8"
-            >
-              <a
-                class="flex h-full w-full flex-col items-center justify-center gap-3 text-center"
-                href="/"
-              >
-                <span
-                  class="iconify lucide--home text-5xl text-black dark:text-white"
-                ></span>
-                <span class="text-xl font-bold text-black dark:text-white"
-                  >Return to Homepage</span
-                >
-              </a>
-            </div>
-          </div>
-        </main>
+<BaseLayout title="404 Not Found - Morghulis">
+  <Header />
+  <main class="flex-1 px-4 py-12 sm:px-8 sm:py-16 md:py-24">
+    <div class="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
+      <div
+        class="card flex min-h-[200px] items-center justify-center p-6 sm:p-8 md:col-span-2 md:min-h-[300px]"
+      >
+        <h1
+          class="text-accent text-8xl leading-none font-black tracking-tighter sm:text-9xl md:text-[160px] lg:text-[200px]"
+        >
+          404
+        </h1>
       </div>
+
+      <div
+        class="card flex flex-col items-center justify-center gap-4 p-6 text-center sm:p-8"
+      >
+        <span class="icon-[dinkie-icons--dragon-face] text-accent text-5xl"
+        ></span>
+        <p class="text-lg font-bold">Morghulis</p>
+        <p class="dim-label text-sm">
+          A Wayland desktop shell built with GTK4, Libadwaita and Astal.
+        </p>
+      </div>
+
+      <div class="card flex flex-col justify-center p-6 sm:p-8 md:col-span-2">
+        <p
+          class="text-3xl leading-tight font-black tracking-[-0.033em] sm:text-4xl"
+        >
+          Page Not Found
+        </p>
+        <p class="dim-label mt-3 text-base">
+          Sorry, the page you are looking for doesn't exist or has been moved.
+        </p>
+      </div>
+
+      <a
+        class="rounded-card suggested-action flex flex-col items-center justify-center gap-3 p-6 text-center sm:p-8"
+        href="/"
+      >
+        <span class="icon-[lucide--house] text-5xl"></span>
+        <span class="text-xl font-bold">Return to Homepage</span>
+      </a>
     </div>
-  </div>
+  </main>
 </BaseLayout>

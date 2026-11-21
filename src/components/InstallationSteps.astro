@@ -2,21 +2,17 @@
 import { Code } from "astro/components";
 ---
 
-<div
-  class="bg-card-light dark:bg-card-dark col-span-1 rounded-xl p-6 lg:col-span-2 lg:row-span-2"
->
-  <h2 class="mb-4 text-xl font-bold">Installation Steps</h2>
-
-  <div class="space-y-8">
-    <div>
-      <h3 class="mb-4 text-lg font-bold">Arch Linux</h3>
-      <ol
-        class="text-subtext-light dark:text-subtext-dark list-inside list-decimal space-y-4"
-      >
+<section class="lg:col-span-2">
+  <h2 class="mb-3 px-1 text-sm font-bold">Install</h2>
+  <div class="card boxed-list">
+    <div class="p-6">
+      <h3 class="mb-4 flex items-center gap-2 text-lg font-bold">
+        <span class="icon-[lucide--package] text-accent"></span>
+        Arch Linux
+      </h3>
+      <ol class="list-inside list-decimal space-y-4">
         <li>
-          <span class="text-text-light dark:text-text-dark font-medium"
-            >Install from AUR:</span
-          >
+          <span class="font-medium">Install from the AUR with any helper:</span>
           <Code
             class="mt-2 rounded-md p-2"
             code={`yay -S morghulis-git`}
@@ -24,9 +20,7 @@ import { Code } from "astro/components";
           />
         </li>
         <li>
-          <span class="text-text-light dark:text-text-dark font-medium"
-            >Just launch it:</span
-          >
+          <span class="font-medium">Run it:</span>
           <Code
             class="mt-2 rounded-md p-2"
             code={`morghulis --help`}
@@ -34,40 +28,41 @@ import { Code } from "astro/components";
           />
         </li>
       </ol>
+      <p class="dim-label mt-4 text-sm">
+        Prefer the latest release binary? Use the{" "}
+        <a
+          class="text-accent underline"
+          href="https://raw.githubusercontent.com/ARKye03/PKGBUILDS/refs/heads/trunk/morghulis-bin/PKGBUILD"
+          >morghulis-bin PKGBUILD</a
+        >.
+      </p>
     </div>
 
-    <div>
-      <h3 class="mb-4 text-lg font-bold">Build from source</h3>
-      <ol
-        class="text-subtext-light dark:text-subtext-dark list-inside list-decimal space-y-4"
-      >
+    <div class="p-6">
+      <h3 class="mb-4 flex items-center gap-2 text-lg font-bold">
+        <span class="icon-[lucide--hammer] text-accent"></span>
+        From source
+      </h3>
+      <ol class="list-inside list-decimal space-y-4">
         <li>
-          <span class="text-text-light dark:text-text-dark font-medium"
-            >Clone the repository:</span
-          >
+          <span class="font-medium">Clone the repository:</span>
           <Code
             class="mt-2 rounded-md p-2"
-            code={`git clone https://github.com/ARKye03/morghulis.git`}
+            code={`git clone https://github.com/ARKye03/morghulis
+cd morghulis`}
             lang="sh"
           />
         </li>
         <li>
-          <span class="text-text-light dark:text-text-dark font-medium"
-            >Build the project:</span
-          >
+          <span class="font-medium">Set up the build and install:</span>
           <Code
             class="mt-2 rounded-md p-2"
-            code={`cd morghulis; just build`}
+            code={`just init
+just install`}
             lang="sh"
           />
-        </li>
-        <li>
-          <span class="text-text-light dark:text-text-dark font-medium"
-            >Run it:</span
-          >
-          <Code class="mt-2 rounded-md p-2" code={`just`} lang="sh" />
         </li>
       </ol>
     </div>
   </div>
-</div>
+</section>
