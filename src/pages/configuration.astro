@@ -112,9 +112,9 @@ const settings = [
             <span
               class="icon-[lucide--file-code] text-accent mt-0.5 shrink-0 text-xl"
             ></span>
-            <div>
+            <div class="min-w-0">
               <h3 class="font-bold">Your stylesheet</h3>
-              <p class="dim-label text-sm">
+              <p class="dim-label text-sm wrap-anywhere">
                 Create <code>$XDG_CONFIG_HOME/morghulis/main.css</code> (usually{
                   " "
                 }
@@ -127,7 +127,7 @@ const settings = [
             <span
               class="icon-[lucide--refresh-cw] text-accent mt-0.5 shrink-0 text-xl"
             ></span>
-            <div>
+            <div class="min-w-0">
               <h3 class="font-bold">Hot reload</h3>
               <p class="dim-label text-sm">
                 Morghulis watches the file. Saving it applies your changes
@@ -139,7 +139,7 @@ const settings = [
             <span
               class="icon-[lucide--palette] text-accent mt-0.5 shrink-0 text-xl"
             ></span>
-            <div>
+            <div class="min-w-0">
               <h3 class="font-bold">Built-in theme</h3>
               <p class="dim-label mb-2 text-sm">
                 Morghulis ships a black Adwaita style. Turn it off to follow
@@ -193,7 +193,7 @@ const settings = [
                   <div class="flex flex-1 gap-1">
                     {[1, 2, 3, 4, 5].map((shade) => (
                       <span
-                        class="h-8 flex-1 rounded-md"
+                        class="ring-window-fg/15 h-8 flex-1 rounded-md ring-1 ring-inset"
                         style={`background-color: var(--${hue}-${shade})`}
                         title={`--${hue}-${shade}`}
                       />

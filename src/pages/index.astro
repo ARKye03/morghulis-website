@@ -56,7 +56,7 @@ import { Image } from "astro:assets";
   }
 
   #logo-mask {
-    background: var(--window-bg-color);
+    background: var(--accent-bg-color);
     mask-image: url("/src/assets/morghulisText.svg");
     mask-position: center 27.5%;
     mask-repeat: no-repeat;
@@ -74,59 +74,72 @@ import { Image } from "astro:assets";
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const timeline = gsap.timeline({
-    ease: "power1.out",
-    scrollTrigger: {
-      trigger: "#spacer",
-      start: "top top",
-      end: "bottom top",
-      scrub: 1,
-      pin: false,
-    },
+  // Module scripts run once per full load; ClientRouter swaps need a re-init.
+  let timeline: gsap.core.Timeline | undefined;
+
+  document.addEventListener("astro:page-load", () => {
+    if (!document.getElementById("spacer")) return;
+
+    timeline = gsap.timeline({
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: "#spacer",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        pin: false,
+      },
+    });
+
+    timeline
+      .to("#hero-key-logo", {
+        opacity: 0,
+        duration: 0.5,
+      })
+      .to(
+        "#hero-key",
+        {
+          scale: 1,
+        },
+        "<",
+      )
+      .to(
+        "#logo-mask",
+        {
+          maskSize: "clamp(20vh, 25%, 30vh)",
+        },
+        0.25,
+      )
+      .to(
+        "#hero-key",
+        {
+          opacity: 0,
+          duration: 0.3,
+        },
+        0.7,
+      )
+      .to(
+        "#logo-mask",
+        {
+          opacity: 0,
+          pointerEvents: "none",
+          duration: 0.3,
+        },
+        0.85,
+      );
+    // .to(
+    //   "#main-header",
+    //   {
+    //     opacity: 1,
+    //     duration: 1,
+    //   },
+    //   "<"
+    // );
   });
 
-  timeline
-    .to("#hero-key-logo", {
-      opacity: 0,
-      duration: 0.5,
-    })
-    .to(
-      "#hero-key",
-      {
-        scale: 1,
-      },
-      "<",
-    )
-    .to(
-      "#logo-mask",
-      {
-        maskSize: "clamp(20vh, 25%, 30vh)",
-      },
-      0.25,
-    )
-    .to(
-      "#hero-key",
-      {
-        opacity: 0,
-        duration: 0.3,
-      },
-      0.7,
-    )
-    .to(
-      "#logo-mask",
-      {
-        opacity: 0,
-        pointerEvents: "none",
-        duration: 0.3,
-      },
-      0.85,
-    );
-  // .to(
-  //   "#main-header",
-  //   {
-  //     opacity: 1,
-  //     duration: 1,
-  //   },
-  //   "<"
-  // );
+  document.addEventListener("astro:before-swap", () => {
+    timeline?.scrollTrigger?.kill();
+    timeline?.kill();
+    timeline = undefined;
+  });
 </script>
