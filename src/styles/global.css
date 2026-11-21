@@ -247,7 +247,7 @@
 }
 
 .button-arrow:after {
-  content: "»";
+  content: "»" / "";
   font-size: 2rem;
   position: absolute;
   opacity: 0;
