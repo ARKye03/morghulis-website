@@ -4,28 +4,20 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 <header
   id="main-header"
-  class="bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 w-full border-b border-black/10 backdrop-blur-sm dark:border-white/10"
+  class="bg-headerbar-bg/80 text-headerbar-fg border-headerbar-shade sticky top-0 z-50 w-full border-b backdrop-blur-sm"
 >
   <div
     class="container mx-auto flex h-16 max-w-5xl items-center justify-between px-4"
   >
-    <a href="/" class="flex items-center gap-4">
-      <span
-        class="icon-[dinkie-icons--dragon-face] text-primary-light dark:text-primary-dark text-2xl"
+    <a href="/" class="flex items-center gap-3">
+      <span class="icon-[dinkie-icons--dragon-face] text-accent text-2xl"
       ></span>
 
-      <h2
-        class="text-lg font-bold tracking-[-0.015em] text-gray-800 dark:text-white"
-      >
-        Morghulis
-      </h2>
+      <h2 class="text-base font-bold">Morghulis</h2>
     </a>
     <div class="flex items-center gap-2">
       <ThemeToggle />
-      <a
-        href="/installation"
-        class="bg-primary-light dark:bg-primary-dark flex h-10 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg px-4 text-sm leading-normal font-bold tracking-[0.015em] text-gray-800 transition-opacity hover:opacity-90 dark:text-white"
-      >
+      <a href="/installation" class="pill suggested-action px-5 text-sm">
         <span class="truncate">Get Started</span>
       </a>
     </div>

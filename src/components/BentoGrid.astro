@@ -7,7 +7,7 @@ import adwaitaLogo from "@assets/adwaitaLogo.svg";
 <section class="mt-12 px-4 sm:mt-24 sm:px-6 md:mt-32">
   <div class="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3">
     <div
-      class="group bg-card-light dark:bg-card-dark relative flex min-h-[280px] flex-col justify-end overflow-hidden rounded-xl border border-black/10 p-6 shadow-md transition-shadow hover:shadow-xl sm:min-h-[320px] sm:p-8 md:col-span-2 md:row-span-2 dark:border-white/10"
+      class="group card relative flex min-h-[280px] flex-col justify-end overflow-hidden p-6 sm:min-h-[320px] sm:p-8 md:col-span-2 md:row-span-2"
     >
       <div class="absolute inset-0 z-0">
         <Image
@@ -25,96 +25,72 @@ import adwaitaLogo from "@assets/adwaitaLogo.svg";
         <h3 class="text-xl font-bold text-white sm:text-2xl">
           Stunning Visuals & Theming
         </h3>
-        <p class="mt-2 text-sm text-gray-300 sm:text-base">
+        <p class="mt-2 text-sm text-white/80 sm:text-base">
           Showcasing the UI with different themes applied.
         </p>
       </div>
     </div>
 
-    <div
-      class="bg-card-light dark:bg-card-dark flex flex-col gap-4 rounded-xl border border-black/10 p-6 shadow-md transition-shadow hover:shadow-xl dark:border-white/10"
-    >
+    <div class="card flex flex-col gap-4 p-6">
       <div
-        class="bg-primary-light/20 dark:bg-primary-dark/20 text-primary-light dark:text-primary-dark flex h-12 w-12 items-center justify-center rounded-lg"
+        class="bg-accent-bg/15 text-accent rounded-card flex h-12 w-12 items-center justify-center"
       >
         <span class="icon-[material-symbols--bolt] text-3xl"></span>
       </div>
       <div>
-        <h3
-          class="text-base font-bold text-gray-900 sm:text-lg dark:text-white"
-        >
-          Blazing Fast Performance
-        </h3>
-        <p
-          class="text-text-light dark:text-text-dark mt-1 text-sm sm:text-base"
-        >
+        <h3 class="text-base font-bold sm:text-lg">Blazing Fast Performance</h3>
+        <p class="dim-label mt-1 text-sm sm:text-base">
           A brief note on its lightweight nature.
         </p>
       </div>
     </div>
 
-    <div
-      class="bg-card-light dark:bg-card-dark flex flex-col gap-4 rounded-xl border border-black/10 p-6 shadow-md transition-shadow hover:shadow-xl dark:border-white/10"
-    >
+    <div class="card flex flex-col gap-4 p-6">
       <div
-        class="bg-primary-light/20 dark:bg-primary-dark/20 text-primary-light dark:text-primary-dark flex h-12 w-12 items-center justify-center rounded-lg"
+        class="bg-accent-bg/15 text-accent rounded-card flex h-12 w-12 items-center justify-center"
       >
         <span class="icon-[cil--view-quilt] text-3xl"></span>
       </div>
       <div>
-        <h3
-          class="text-base font-bold text-gray-900 sm:text-lg dark:text-white"
-        >
+        <h3 class="text-base font-bold sm:text-lg">
           Powerful Window Management
         </h3>
-        <p
-          class="text-text-light dark:text-text-dark mt-1 text-sm sm:text-base"
-        >
+        <p class="dim-label mt-1 text-sm sm:text-base">
           Demonstrating tiling and workspaces.
         </p>
       </div>
     </div>
 
-    <div
-      class="bg-card-light dark:bg-card-dark flex flex-col justify-between rounded-xl border border-black/10 p-6 shadow-md transition-shadow hover:shadow-xl dark:border-white/10"
-    >
+    <div class="card flex flex-col justify-between p-6">
       <div>
-        <h3
-          class="text-base font-bold text-gray-900 sm:text-lg dark:text-white"
-        >
+        <h3 class="text-base font-bold sm:text-lg">
           Extensible & Customizable
         </h3>
-        <p
-          class="text-text-light dark:text-text-dark mt-1 text-sm sm:text-base"
-        >
+        <p class="dim-label mt-1 text-sm sm:text-base">
           Highlighting plugin support and configuration options.
         </p>
       </div>
       <div class="mt-4 flex -space-x-2">
         <span
-          class="text-text-light dark:text-text-dark border-card-light dark:border-card-dark flex h-8 w-8 items-center justify-center rounded-full border-2 bg-gray-200 text-sm font-bold dark:bg-gray-700"
+          class="bg-accent-bg text-accent-fg ring-view-bg flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ring-2"
         >
           P1
         </span>
         <span
-          class="text-text-light dark:text-text-dark border-card-light dark:border-card-dark flex h-8 w-8 items-center justify-center rounded-full border-2 bg-gray-200 text-sm font-bold dark:bg-gray-700"
+          class="bg-accent-bg text-accent-fg ring-view-bg flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ring-2"
         >
           P2
         </span>
         <span
-          class="text-text-light dark:text-text-dark border-card-light dark:border-card-dark flex h-8 w-8 items-center justify-center rounded-full border-2 bg-gray-200 text-sm font-bold dark:bg-gray-700"
+          class="bg-accent-bg text-accent-fg ring-view-bg flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ring-2"
         >
           P3
         </span>
       </div>
     </div>
 
-    <div
-      class="bg-card-light dark:bg-card-dark flex flex-col items-center justify-center gap-4 rounded-xl border border-black/10 p-6 shadow-md transition-shadow hover:shadow-xl dark:border-white/10"
-    >
-      <h3
-        class="text-center text-base font-bold text-gray-900 sm:text-lg dark:text-white"
-      >
+    <div class="card flex flex-col items-center justify-center gap-4 p-6">
+      <h3 class="text-center text-base font-bold sm:text-lg">
         Built with GTK4, Adwaita, and Vala
       </h3>
       <div class="flex items-center gap-6 text-5xl">
@@ -125,16 +101,14 @@ import adwaitaLogo from "@assets/adwaitaLogo.svg";
     </div>
 
     <div
-      class="bg-primary-light/10 dark:bg-primary-dark/10 flex flex-col items-center justify-center gap-4 rounded-xl border border-black/10 p-6 text-center shadow-md transition-shadow hover:shadow-xl dark:border-white/10"
+      class="card flex flex-col items-center justify-center gap-4 p-6 text-center"
     >
-      <h3 class="text-lg font-bold text-gray-900 sm:text-xl dark:text-white">
-        Ready to Dive In?
-      </h3>
-      <p class="text-text-light dark:text-text-dark text-sm sm:text-base">
+      <h3 class="text-lg font-bold sm:text-xl">Ready to Dive In?</h3>
+      <p class="dim-label text-sm sm:text-base">
         Explore the installation guide or check out the source code.
       </p>
       <a
-        class="button-arrow bg-primary-light dark:bg-primary-dark relative mt-2 inline-block w-full max-w-[280px] cursor-pointer rounded-lg border-none p-4 text-center text-sm leading-normal font-bold tracking-[0.015em] text-white shadow-xl transition-all duration-500 hover:pr-6 hover:pl-2 sm:w-[220px]"
+        class="button-arrow pill suggested-action relative mt-2 w-full max-w-[280px] text-sm transition-all duration-500 hover:pr-10 hover:pl-6 sm:w-[220px]"
         href="/installation"
       >
         Get Started

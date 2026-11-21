@@ -187,6 +187,44 @@
   --radius-pill: 9999px;
 }
 
+/* libadwaita style classes: .card, .pill + .suggested-action, .dim-label */
+@utility card {
+  background-color: var(--card-bg-color);
+  color: var(--card-fg-color);
+  border-radius: var(--radius-card);
+  box-shadow:
+    0 0 0 1px var(--card-shade-color),
+    0 1px 3px 1px var(--card-shade-color);
+}
+
+@utility pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.625rem 2rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  transition: filter 150ms ease-in-out;
+}
+
+@utility suggested-action {
+  background-color: var(--accent-bg-color);
+  color: var(--accent-fg-color);
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    filter: brightness(0.9);
+  }
+}
+
+@utility dim-label {
+  opacity: 0.55;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
