@@ -1,3 +1,7 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+---
+
 <header
   id="main-header"
   class="bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 w-full border-b border-black/10 backdrop-blur-sm dark:border-white/10"
@@ -17,6 +21,7 @@
       </h2>
     </a>
     <div class="flex items-center gap-2">
+      <ThemeToggle />
       <a
         href="/installation"
         class="bg-primary-light dark:bg-primary-dark flex h-10 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg px-4 text-sm leading-normal font-bold tracking-[0.015em] text-gray-800 transition-opacity hover:opacity-90 dark:text-white"

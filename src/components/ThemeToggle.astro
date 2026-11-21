@@ -1,0 +1,30 @@
+<button
+  type="button"
+  data-theme-toggle
+  aria-label="Toggle dark mode"
+  title="Toggle dark mode"
+  class="text-text-light dark:text-text-dark flex size-10 cursor-pointer items-center justify-center rounded-lg transition-colors hover:bg-black/5 dark:hover:bg-white/10"
+>
+  <span class="icon-[material-symbols--dark-mode-outline] text-xl dark:hidden"
+  ></span>
+  <span
+    class="icon-[material-symbols--light-mode-outline] hidden text-xl dark:inline-block"
+  ></span>
+</button>
+
+<script>
+  // Delegated once per full load, so it survives ClientRouter swaps.
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+    if (!event.target.closest("[data-theme-toggle]")) return;
+
+    const root = document.documentElement;
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem("theme", next);
+    } catch {
+      // Storage blocked: the choice lasts for this page only.
+    }
+  });
+</script>
