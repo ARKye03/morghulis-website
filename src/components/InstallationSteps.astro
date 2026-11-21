@@ -3,22 +3,22 @@ import { Code } from "astro/components";
 ---
 
 <div
-  class="col-span-1 lg:col-span-2 lg:row-span-2 rounded-xl bg-card-light dark:bg-card-dark p-6"
+  class="bg-card-light dark:bg-card-dark col-span-1 rounded-xl p-6 lg:col-span-2 lg:row-span-2"
 >
-  <h2 class="text-xl font-bold mb-4">Installation Steps</h2>
+  <h2 class="mb-4 text-xl font-bold">Installation Steps</h2>
 
   <div class="space-y-8">
     <div>
-      <h3 class="text-lg font-bold mb-4">Arch Linux</h3>
+      <h3 class="mb-4 text-lg font-bold">Arch Linux</h3>
       <ol
-        class="list-decimal list-inside space-y-4 text-subtext-light dark:text-subtext-dark"
+        class="text-subtext-light dark:text-subtext-dark list-inside list-decimal space-y-4"
       >
         <li>
           <span class="text-text-light dark:text-text-dark font-medium"
             >Install from AUR:</span
           >
           <Code
-            class="rounded-md p-2 mt-2"
+            class="mt-2 rounded-md p-2"
             code={`yay -S morghulis-git`}
             lang="sh"
           />
@@ -28,7 +28,7 @@ import { Code } from "astro/components";
             >Just launch it:</span
           >
           <Code
-            class="rounded-md p-2 mt-2"
+            class="mt-2 rounded-md p-2"
             code={`morghulis --help`}
             lang="sh"
           />
@@ -37,16 +37,16 @@ import { Code } from "astro/components";
     </div>
 
     <div>
-      <h3 class="text-lg font-bold mb-4">Build from source</h3>
+      <h3 class="mb-4 text-lg font-bold">Build from source</h3>
       <ol
-        class="list-decimal list-inside space-y-4 text-subtext-light dark:text-subtext-dark"
+        class="text-subtext-light dark:text-subtext-dark list-inside list-decimal space-y-4"
       >
         <li>
           <span class="text-text-light dark:text-text-dark font-medium"
             >Clone the repository:</span
           >
           <Code
-            class="rounded-md p-2 mt-2"
+            class="mt-2 rounded-md p-2"
             code={`git clone https://github.com/ARKye03/morghulis.git`}
             lang="sh"
           />
@@ -56,7 +56,7 @@ import { Code } from "astro/components";
             >Build the project:</span
           >
           <Code
-            class="rounded-md p-2 mt-2"
+            class="mt-2 rounded-md p-2"
             code={`cd morghulis; just build`}
             lang="sh"
           />
@@ -65,7 +65,7 @@ import { Code } from "astro/components";
           <span class="text-text-light dark:text-text-dark font-medium"
             >Run it:</span
           >
-          <Code class="rounded-md p-2 mt-2" code={`just`} lang="sh" />
+          <Code class="mt-2 rounded-md p-2" code={`just`} lang="sh" />
         </li>
       </ol>
     </div>

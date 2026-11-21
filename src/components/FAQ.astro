@@ -3,13 +3,13 @@ import { Code } from "astro/components";
 ---
 
 <div
-  class="col-span-1 lg:col-span-2 rounded-xl bg-card-light dark:bg-card-dark p-6"
+  class="bg-card-light dark:bg-card-dark col-span-1 rounded-xl p-6 lg:col-span-2"
 >
-  <h2 class="text-xl font-bold mb-4">Frequently Asked Questions</h2>
+  <h2 class="mb-4 text-xl font-bold">Frequently Asked Questions</h2>
   <div class="space-y-3">
     <details class="group">
       <summary
-        class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
+        class="flex w-full cursor-pointer list-none items-center justify-between py-2 text-left font-medium"
       >
         <span>Installation fails with a dependency error. What do I do?</span>
         <span
@@ -17,7 +17,7 @@ import { Code } from "astro/components";
         ></span>
       </summary>
       <div
-        class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
+        class="text-subtext-light dark:text-subtext-dark border-t border-white/10 pt-2 pb-4 text-sm"
       >
         You're missing a dependency duh
       </div>
@@ -25,7 +25,7 @@ import { Code } from "astro/components";
 
     <details class="group">
       <summary
-        class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
+        class="flex w-full cursor-pointer list-none items-center justify-between py-2 text-left font-medium"
       >
         <span>How can I have the Bar at top?</span>
         <span
@@ -33,7 +33,7 @@ import { Code } from "astro/components";
         ></span>
       </summary>
       <div
-        class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
+        class="text-subtext-light dark:text-subtext-dark border-t border-white/10 pt-2 pb-4 text-sm"
       >
         <p>
           You either
@@ -49,7 +49,7 @@ import { Code } from "astro/components";
 
     <details class="group">
       <summary
-        class="w-full flex justify-between items-center text-left py-2 font-medium cursor-pointer list-none"
+        class="flex w-full cursor-pointer list-none items-center justify-between py-2 text-left font-medium"
       >
         <span>Does Morghulis work with NVIDIA proprietary drivers?</span>
         <span
@@ -57,7 +57,7 @@ import { Code } from "astro/components";
         ></span>
       </summary>
       <div
-        class="pt-2 pb-4 text-subtext-light dark:text-subtext-dark text-sm border-t border-white/10"
+        class="text-subtext-light dark:text-subtext-dark border-t border-white/10 pt-2 pb-4 text-sm"
       >
         Yes, Morghulis is compatible with NVIDIA proprietary drivers. Make sure
         you're running the latest driver version for the best experience. Some

@@ -1,0 +1,10 @@
+# Ignore artifacts:
+build
+coverage
+.claude
+CLAUDE.md
+.githooks
+.astro
+dist
+pnpm-lock.yaml
+.vercel

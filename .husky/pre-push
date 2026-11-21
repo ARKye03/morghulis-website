@@ -1,0 +1,12 @@
+echo "Running pre-push hook..."
+
+echo "Running TypeScript check (pnpm check)..."
+pnpm check
+
+echo "Running linter (pnpm lint)..."
+pnpm lint
+
+echo "Running formatter (pnpm fmt:check)..."
+pnpm fmt:check
+
+echo "Pre-push hook completed."

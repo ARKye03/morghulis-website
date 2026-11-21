@@ -13,13 +13,13 @@ import FAQ from "@components/FAQ.astro";
     <div class="mx-auto max-w-6xl">
       <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:grid-rows-3">
         <div
-          class="col-span-1 lg:col-span-3 rounded-xl bg-card-light dark:bg-card-dark p-6 md:p-8 flex flex-col justify-center"
+          class="bg-card-light dark:bg-card-dark col-span-1 flex flex-col justify-center rounded-xl p-6 md:p-8 lg:col-span-3"
         >
-          <h1 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">
+          <h1 class="mb-4 text-4xl font-bold tracking-tighter md:text-5xl">
             Installation Guide
           </h1>
           <p
-            class="text-base md:text-lg text-subtext-light dark:text-subtext-dark max-w-3xl"
+            class="text-subtext-light dark:text-subtext-dark max-w-3xl text-base md:text-lg"
           >
             Your step-by-step guide to setting up Morghulis, our GTK-based
             graphical desktop shell for Linux. Follow the instructions for your
@@ -28,9 +28,9 @@ import FAQ from "@components/FAQ.astro";
         </div>
 
         <div
-          class="col-span-1 lg:col-span-1 rounded-xl bg-card-light dark:bg-card-dark p-6"
+          class="bg-card-light dark:bg-card-dark col-span-1 rounded-xl p-6 lg:col-span-1"
         >
-          <h2 class="text-xl font-bold mb-4">Prerequisites</h2>
+          <h2 class="mb-4 text-xl font-bold">Prerequisites</h2>
           <div class="space-y-4">
             <div class="flex items-start gap-3">
               <span
@@ -38,7 +38,7 @@ import FAQ from "@components/FAQ.astro";
               ></span>
               <div>
                 <h3 class="font-bold">GTK 4.x+</h3>
-                <p class="text-sm text-subtext-light dark:text-subtext-dark">
+                <p class="text-subtext-light dark:text-subtext-dark text-sm">
                   Ensure you have the latest GTK libraries installed.
                 </p>
               </div>
@@ -49,7 +49,7 @@ import FAQ from "@components/FAQ.astro";
               ></span>
               <div>
                 <h3 class="font-bold">Systemd</h3>
-                <p class="text-sm text-subtext-light dark:text-subtext-dark">
+                <p class="text-subtext-light dark:text-subtext-dark text-sm">
                   A systemd-based Linux distribution is required.
                 </p>
               </div>
@@ -60,7 +60,7 @@ import FAQ from "@components/FAQ.astro";
               ></span>
               <div>
                 <h3 class="font-bold">Disk Space</h3>
-                <p class="text-sm text-subtext-light dark:text-subtext-dark">
+                <p class="text-subtext-light dark:text-subtext-dark text-sm">
                   At least 2GB of free disk space is recommended.
                 </p>
               </div>
@@ -71,7 +71,7 @@ import FAQ from "@components/FAQ.astro";
         <InstallationSteps />
 
         <div
-          class="col-span-1 lg:col-span-1 rounded-xl bg-card-light dark:bg-card-dark overflow-hidden"
+          class="bg-card-light dark:bg-card-dark col-span-1 overflow-hidden rounded-xl lg:col-span-1"
         >
           <Image
             alt="A screenshot of the Morghulis desktop environment"
@@ -81,11 +81,11 @@ import FAQ from "@components/FAQ.astro";
         </div>
 
         <div
-          class="col-span-1 lg:col-span-1 rounded-xl bg-card-light dark:bg-card-dark p-6"
+          class="bg-card-light dark:bg-card-dark col-span-1 rounded-xl p-6 lg:col-span-1"
         >
-          <h2 class="text-xl font-bold mb-4">Post-Installation</h2>
+          <h2 class="mb-4 text-xl font-bold">Post-Installation</h2>
           <ul
-            class="list-disc list-inside space-y-2 text-subtext-light dark:text-subtext-dark"
+            class="text-subtext-light dark:text-subtext-dark list-inside list-disc space-y-2"
           >
             <li class="text-text-light dark:text-text-dark">
               Log in to your new session.
